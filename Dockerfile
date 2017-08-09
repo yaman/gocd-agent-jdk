@@ -31,7 +31,7 @@ RUN \
   curl --fail --location --silent --show-error "https://download.gocd.org/binaries/17.8.0-5277/generic/go-agent-17.8.0-5277.zip" > /tmp/go-agent.zip && \
 # unzip the zip file into /go-agent, after stripping the first path prefix
   unzip /tmp/go-agent.zip -d / && \
-  mv go-agent-17.8.0 /go-agent && \
+  mv /go-agent-17.8.0 /go-agent && \
   rm /tmp/go-agent.zip
 
 ENV PATH="/opt/gradle-4.1/bin:${PATH}"
