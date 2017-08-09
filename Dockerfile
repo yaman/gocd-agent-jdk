@@ -26,7 +26,7 @@ RUN \
 # gradle installation
   curl --fail --location --silent --show-error "https://services.gradle.org/distributions/gradle-4.1-bin.zip" > /tmp/gradle.zip && \
   unzip /tmp/gradle.zip -d / && \
-  mv gradle /opt/ && \
+  mv /gradle-4.1 /opt/ && \
 # download the zip file
   curl --fail --location --silent --show-error "https://download.gocd.org/binaries/17.8.0-5277/generic/go-agent-17.8.0-5277.zip" > /tmp/go-agent.zip && \
 # unzip the zip file into /go-agent, after stripping the first path prefix
@@ -34,7 +34,7 @@ RUN \
   mv go-agent-17.8.0 /go-agent && \
   rm /tmp/go-agent.zip
 
-ENV PATH="/opt/gradle/bin:${PATH}"
+ENV PATH="/opt/gradle-4.1/bin:${PATH}"
 
 ADD docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
