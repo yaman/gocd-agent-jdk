@@ -1,4 +1,4 @@
-FROM airdock-io/docker-oracle-jdk:latest
+FROM airdock/oracle-jdk:latest
 
 ADD https://github.com/krallin/tini/releases/download/v0.15.0/tini-static-amd64 /usr/local/sbin/tini
 ADD https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 /usr/local/sbin/gosu
