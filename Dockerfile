@@ -1,13 +1,5 @@
 FROM airdock-io/docker-oracle-jdk:latest
 
-MAINTAINER GoCD <go-cd-dev@googlegroups.com>
-
-LABEL gocd.version="17.8.0" \
-  description="GoCD agent based on debian version 8" \
-  maintainer="GoCD <go-cd-dev@googlegroups.com>" \
-  gocd.full.version="17.8.0-5277" \
-  gocd.git.sha="32ff863cce99f97b76abb1b88469a793e3b1adc5"
-
 ADD https://github.com/krallin/tini/releases/download/v0.15.0/tini-static-amd64 /usr/local/sbin/tini
 ADD https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 /usr/local/sbin/gosu
 
@@ -34,7 +26,7 @@ RUN \
 # gradle installation
   curl --fail --location --silent --show-error "https://services.gradle.org/distributions/gradle-4.1-bin.zip" > /tmp/gradle.zip && \
   unzip /tmp/gradle.zip -d / && \
-  mv gradle /opt/
+  mv gradle /opt/ && \
 # download the zip file
   curl --fail --location --silent --show-error "https://download.gocd.org/binaries/17.8.0-5277/generic/go-agent-17.8.0-5277.zip" > /tmp/go-agent.zip && \
 # unzip the zip file into /go-agent, after stripping the first path prefix
